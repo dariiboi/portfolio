@@ -1,5 +1,6 @@
 :root {
-  --shadow-color: rgb(175, 175, 192);
+  /* --shadow-color: rgb(175, 175, 192); */
+  --shadow-color: white;
   --link-color: rgb(10, 51, 199);
   --main-text-color: rgb(54, 40, 81);
   --fonts: tahoma, Helvetica, 
@@ -11,13 +12,13 @@
     box-sizing: border-box;
   }
 .menu:not(:hover){
-  filter: blur(0.1rem);
+  filter: blur(1rem);
 }
 .feed-wrapper:not(:hover){
-  filter: blur(0.1rem);
+  filter: blur(1rem);
 }
 .fun-zone:not(:hover){
-  filter: blur(0.1rem);
+  filter: blur(1rem);
 }
   body{
     letter-spacing: -.03rem;
@@ -37,7 +38,6 @@
     padding: 1rem;
     display: grid;
     gap: 5%;
-    position: fixed;
     grid-template-columns: .5fr 2fr 1fr;
   }
 
