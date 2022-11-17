@@ -1,94 +1,178 @@
+:root {
+  --shadow-color: rgb(175, 175, 192);
+  --link-color: rgb(10, 51, 199);
+  --main-text-color: rgb(54, 40, 81);
+  --fonts: tahoma, Helvetica, 
+  sans-serif;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
   }
+.menu:not(:hover){
+  filter: blur(0.1rem);
+}
+.feed-wrapper:not(:hover){
+  filter: blur(0.1rem);
+}
+.fun-zone:not(:hover){
+  filter: blur(0.1rem);
+}
   body{
-    font-family: tahoma, Helvetica, 
-    sans-serif;
+    letter-spacing: -.03rem;
+    font-family: var(--fonts);
     height: auto;
-    background-color: rgb(246, 251, 255);
+    background-color: white;
   }
   header{
     display: flex;
     justify-content: space-between;
     padding: .5%;
-    height:15%;
   }
-  p{
-    color: rgb(47, 24, 90);
+  h1,h2,h3,h4,p{
+    color: var(--main-text-color);
   }
   .grid-container{
     padding: 1rem;
     display: grid;
-    /* gap: 2%; */
-    grid-template-columns: .5fr 2.5fr 1fr;
+    gap: 5%;
+    position: fixed;
+    grid-template-columns: .5fr 2fr 1fr;
+  }
+
+  .grid-column{
+    background-repeat: repeat;
+    display: grid;
+    place-items: start center;
+    position: relative;
 
   }
-  .grid-column{
+
+  .menu{
     background-color: white;
     border: solid rgb(255, 255, 255) .5rem;
-    border-radius: .8rem;
+    /* border-radius: .8rem; */
     display: grid;
     place-items: center;
-    filter: drop-shadow(0 0 0.75rem rgb(175, 175, 192));
+    filter: drop-shadow(0 0 0.75rem var(--shadow-color));
     height:min-content;
 
   }
- 
+
   .logo>img{
     max-width: 15rem;
     height: auto;
-    position: absolute;
+    position: fixed;
     right: 2rem;
 }
   header>img{
     max-width: 10rem;
     height: auto;
   }
-.button{
-    max-width: 100%;
+.menu-button{
     height: auto;
     display: grid;
     place-items: center;
 
 }
-.button>img{
+.menu-button>img{
     max-width: 6rem;
     height: auto;
     transform: skewY(10deg);
   }
-.button>p{
+.menu-button>p{
     z-index: 3;
     position: absolute;
     /* transform: skewY(10deg); */
 }
 .feed-wrapper{
+  background-color: white;
+  border: solid rgb(255, 255, 255) .5rem;
+  /* border-radius: 1rem; */
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 0 0.75rem var(--shadow-color));
+  /* height:min-content; */
   gap: 0%;
   /* height: 100%; */
   /* padding: 1rem; */
-  display: grid;
+  max-width: 600px;
   /* align-items: start; */
 }
+.user-input{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+}
+.user-input > *{
+  border: none;
+  border: solid rgb(197, 191, 197) .1rem;
+  max-width: 550px;
+  margin: .25rem;
+  min-height: 2rem;
+}
+#post-input{
+  font-family: var(--fonts);
+  filter: drop-shadow(0 0 0.5rem var(--shadow-color));
+  
+}
+#submit-button{
+  background-color: white;
+  max-width: 50%;
+}
 .post{
-    border-top: solid rgb(197, 191, 197) .1rem;
-    display: grid;
-    place-items: center;
-    padding-top: 1rem;
-    /* padding-bottom: 1rem; */
-    /* max-height: 10rem; */
+    border: solid rgb(197, 191, 197) .1rem;
+    border-bottom: 0rem; 
+    /* display: grid;
+    place-items: center; */
+    width: 100%;
+    padding: 1rem;
     min-height: 5rem;
     
 }
-.post>img{
-    max-width: 70%;
+.author{
+  display: block;
+  text-align: left;
+  color: var(--link-color);
 }
-.post>p{
+
+.post-img{
+  max-width: 50%;
+  border: none;
+  min-width: 80px;
+}
+.fun-zone{
+  background-image: url("assets/images/dklogo.gif");
+  background-size: 50%;
+  background-repeat: round;
+  height: 100%;
+  margin: 1rem;
 
 }
-@media screen and (max-width: 600px) {
+h1,h2,h3,h4,p{
+  filter: blur(0rem);
+}
+
+@media screen and (max-width: 700px) {
   .grid-container{
+    /* if you wanna make it do the rows */
+    /* grid-template-columns: 1fr;
+    grid-template-rows: .5fr 2.5fr;
+     */
     grid-template-columns: .5fr 2.5fr;
   }
+  .logo>img{
+    max-width: 10rem;
+    height: auto;
+    position: fixed;
+    right: 2rem;
+  }
+  .menu-button>img{
+    max-width: 5rem;
+    height: auto;
+    transform: skewY(10deg);
+  }
 }
+
