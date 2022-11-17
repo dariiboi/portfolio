@@ -12,13 +12,16 @@
     box-sizing: border-box;
   }
 .menu:not(:hover){
-  filter: blur(1rem);
+  filter: blur(2rem);
+}
+.menu::before{
+
 }
 .feed-wrapper:not(:hover){
-  filter: blur(1rem);
+  filter: blur(2rem);
 }
 .fun-zone:not(:hover){
-  filter: blur(1rem);
+  filter: blur(2rem);
 }
   body{
     letter-spacing: -.03rem;
@@ -46,7 +49,7 @@
     display: grid;
     place-items: start center;
     position: relative;
-
+    border: solid rgb(197, 191, 197) .1rem;
   }
 
   .menu{
